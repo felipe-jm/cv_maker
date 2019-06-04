@@ -28,6 +28,11 @@
     <div id="form">
         <div class="container py-5">
             <h2>Preencha o formulário com atenção!</h2>
+            <form action="/file-upload" class="dropzone needsclick my-5" id="dropzoneImg">
+                <div class="dz-message needsclick">
+                    Coloque sua foto aqui.
+                </div>
+            </form>
             <form>
                 <div class="row">
                     <div class="col-md-6">
@@ -52,13 +57,6 @@
                     </div>
                 </div>
                 <button class="btn btn-outline-success">Gerar formulário</button>
-            </form>
-            <form action="/file-upload" class="dropzone needsclick my-5" id="dropzoneImg">
-                <div class="dz-message needsclick">
-                    Drop files here or click to upload.<br>
-                    <span class="note needsclick">(This is just a demo dropzone. Selected
-                        files are <strong>not</strong> actually uploaded.)</span>
-                    </div>
             </form>
         </div>
     </div>
