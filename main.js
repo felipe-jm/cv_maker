@@ -25,8 +25,13 @@ tippy('#idiomas', {
     placement: 'top',
 })
 
-tippy('#capacitacoes', {
+tippy('#capacitacao', {
     content: "Curso – Instituição – Data de conclusão - Carga horaria",
+    placement: 'top',
+})
+
+tippy('#observacoes', {
+    content: "Colocar informações relevantes à sua contratação e situação atual. Exemplo: disponibilidade para viagem, para mudar para outras regiões, carteira de motorista, experiências diversas importantes para a vaga em questão que a pessoa responsável gostaria de saber.",
     placement: 'top',
 })
 
