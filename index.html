@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <title>Gerador de Currículo</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--Personal CSS-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+
+</head>
+
+<body>
+
+    <div id="form">
+        <div class="container py-5">
+            <h2>Preencha o formulário com atenção!</h2>
+            <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="my-2">Nome</label>
+                            <input class="form-control" type="text" placeholder="Nome">
+                            <label class="my-2">E-mail</label>
+                            <input class="form-control" type="text" placeholder="email@email.com">
+                            <label class="my-2">Linkedin</label>
+                            <input class="form-control" type="text" placeholder="email@email.com">
+                            <label class="my-2">Cidade</label>
+                            <input class="form-control" type="text" placeholder="Cuiabá">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="my-2">Celular</label>
+                        <input class="form-control" type="text" placeholder="(65) 99999-9999">
+                        <label class="my-2">Telefone</label>
+                        <input class="form-control" type="text" placeholder="(65) 2222-2222">
+                        <label class="my-2">Data de nascimento</label>
+                        <input type="text" name="date" class="form-control" value="10/24/1984" />
+                    </div>
+                </div>
+                <button class="btn btn-outline-success">Gerar formulário</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(function () {
+            $('input[name="date"]').daterangepicker({
+                singleDatePicker: true,
+                showDropdowns: true,
+                minYear: 1901,
+                maxYear: parseInt(moment().format('YYYY'), 10)
+            }, function (start, end, label) {
+                var years = moment().diff(start, 'years');
+            });
+        });
+    </script>
+
+</body>
+
+</html>
