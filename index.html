@@ -14,9 +14,13 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <!--Datepicker-->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
 
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css">
 </head>
 
 <body>
@@ -48,6 +52,13 @@
                     </div>
                 </div>
                 <button class="btn btn-outline-success">Gerar formulário</button>
+            </form>
+            <form action="/file-upload" class="dropzone needsclick my-5" id="dropzoneImg">
+                <div class="dz-message needsclick">
+                    Drop files here or click to upload.<br>
+                    <span class="note needsclick">(This is just a demo dropzone. Selected
+                        files are <strong>not</strong> actually uploaded.)</span>
+                    </div>
             </form>
         </div>
     </div>

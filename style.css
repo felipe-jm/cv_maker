@@ -7,3 +7,11 @@ body, html{
     margin: 20px;
     box-shadow: 1px 5px 10px grey;
 }
+
+#dropzoneImg{
+    border: 2px dashed #0087F7;
+    border-radius: 5px;
+    width: 150px;
+    height: 100px;
+    background: white;
+}
