@@ -84,5 +84,32 @@ addIdioma.click(function () {
 
 })
 
+var addCapacitacao = $('#adicionar_capacitacao')
+
+addCapacitacao.click(function () {
+
+    var capacitacao_row = document.getElementById('capacitacao_row')
+    var num_inputs_capacitacao = capacitacao_row.querySelectorAll('input').length
+
+    if (num_inputs_capacitacao < 5) {
+        var nova_capacitacao = document.createElement('input')
+        var capacitacao_div = document.createElement('div')
+        capacitacao_div.className = 'col-md-8 my-2'
+        nova_capacitacao.className = 'form-control'
+        nova_capacitacao.placeholder = 'Curso – Instituição – Data de conclusão - Carga horária'
+        nova_capacitacao.type = 'text'
+        capacitacao_row.appendChild(capacitacao_div)
+        capacitacao_div.appendChild(nova_capacitacao)
+    } else {
+        var limit_div = document.createElement('div')
+        limit_div.className = 'alert alert-danger'
+        limit_div.role = 'alert'
+        limit_div.innerHTML = 'Limite de capacitações atingida!'
+        capacitacao_row.appendChild(limit_div)
+        addCapacitacao.attr('disabled', 'disabled')
+    }
+
+})
+
 
 
