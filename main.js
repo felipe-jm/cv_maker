@@ -1,8 +1,35 @@
+//FORM
+
 $(document).ready(function () {
     Dropzone.options.dropzoneImg = {
         autoProcessQueue: false,
         acceptedFiles: ".png, .jpg, .gif, .bmp, .jpeg",
+        init: function(){
+            var submitBtn = document.getElementById('submit')
+            myDropzone = this;
+            submitBtn.addEventListener('click', function(){
+                myDropzone.processQueue()
+            })
+            this.on('complete', function(){
+                if(this.getQueuedFiles().length == 0 &&  this.getUploadingFiles().length == 0){
+                    var _this = this;
+                    _this.removeAllFiles()
+                }
+            })
+        }
     }
+
+    function show_image(){
+        
+        $.ajax({
+            url:'upload.php',
+            success: function(data){
+                alert('imagem enviada com sucesso')
+            }
+        })
+
+    }
+
 })
 
 tippy('#objetivo', {
@@ -115,6 +142,10 @@ addCapacitacao.click(function () {
     }
 
 })
+
+//PDF-PREVIEW
+
+
 
 
 

@@ -14,6 +14,9 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <!--Roboto-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
     <!--Dropzone CSS-->
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css">
@@ -39,7 +42,7 @@
     <div id="form">
         <div class="container py-5">
             <h2 class="text-center">Preencha o formulário com atenção!</h2>
-            <form action="/file-upload" class="dropzone needsclick my-5" id="dropzoneImg">
+            <form action="upload.php" class="dropzone needsclick my-5" id="dropzoneImg">
                 <div class="dz-message needsclick">
                     Coloque sua foto aqui.
                 </div>
@@ -133,10 +136,124 @@
                     <textarea id="observacao" class="form-control" rows="3"></textarea>
                 </div>
                 <div class="text-center">
-                    <button class="btn btn-success btn-lg my-5">Gerar currículo</button>
+                    <button id="submit" class="btn btn-success btn-lg my-5" type="button">Gerar currículo</button>
                 </div>
             </form>
         </div>
+    </div>
+
+    <!--PDF Preview-->
+    <!-- <div id="pdf-preview">
+        <div class="container-fluid py-3 px-5">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <img id="foto" src="upload/ea.png" align="right" class="img-fluid img-thumbnail rounded">
+                    <h4 id="pdf-nome">Nome e Sobrenome</h4>
+                    <h4 id="pdf-linkedin" class="lead">Linkedin</h4>
+                    <h4>Contato</h4>
+                    <h4 id="pdf-telefone" class="lead">Telefone: </h4>
+                    <h4 id="pdf-email" class="lead">E-mail: </h4>
+                    <h4 id="pdf-data-nascimento" class="lead">Data de nascimento: </h4>
+                    <h4 id="pdf-estado-civil" class="lead">Estado Civil: </h4>
+                </div>
+            </div>
+
+            <div class="topic text-center my-3">
+                <h2>Objetivo</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 text-left">
+                    <p id="pdf-objetivo" class="lead">Seu objetivo aqui. Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                        mollit anim id est laborum.</p>
+                </div>
+            </div>
+
+            <div class="topic text-center">
+                <h2>Resumo</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 text-left">
+                    <p id="pdf-resumo" class="lead">Seu objetivo aqui. Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                        mollit anim id est laborum.</p>
+                </div>
+            </div>
+
+            <div class="topic text-center">
+                <h2>Experiência</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 text-left">
+                    <ul id="pdf-cargos-list">
+                        <li class="lead">Cargo 1</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="topic text-center">
+                <h2>Idiomas</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 text-left">
+                    <ul id="pdf-idiomas-list">
+                        <li class="lead">Idioma 1</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="topic text-center">
+                <h2>Capacitações</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 text-left">
+                    <ul id="pdf-capacitacoes-list">
+                        <li class="lead">Capacitações 1</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="topic text-center">
+                <h2>Observações</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 text-left">
+                    <p id="pdf-resumo" class="lead">Seu objetivo aqui. Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                        mollit anim id est laborum.</p>
+                </div>
+            </div>
+
+        </div>
+    </div> -->
+
+    <div id="pdf-preview">
+        <div id="red-bar"></div>
+
+        <div class="container py-5">
+            <div class="row px-5">
+                <img id="foto" src="upload/ea.png" align="right" class="img-fluid img-thumbnail rounded-circle">
+                <h3 class="font-weight-normal text-uppercase">Nome</h3>
+                <h3 class="font-weight-normal text-uppercase" style="color:#C2331A;"><br>Sobrenome</h3>
+            </div>
+        </div>
+
+        <div id="red-bar"></div>
     </div>
 
     <script src="main.js"></script>
@@ -151,3 +268,4 @@
 </body>
 
 </html>
+
