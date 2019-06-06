@@ -4,14 +4,14 @@ $(document).ready(function () {
     Dropzone.options.dropzoneImg = {
         autoProcessQueue: false,
         acceptedFiles: ".png, .jpg, .gif, .bmp, .jpeg",
-        init: function(){
+        init: function () {
             var submitBtn = document.getElementById('submit')
             myDropzone = this;
-            submitBtn.addEventListener('click', function(){
+            submitBtn.addEventListener('click', function () {
                 myDropzone.processQueue()
             })
-            this.on('complete', function(){
-                if(this.getQueuedFiles().length == 0 &&  this.getUploadingFiles().length == 0){
+            this.on('complete', function () {
+                if (this.getQueuedFiles().length == 0 && this.getUploadingFiles().length == 0) {
                     var _this = this;
                     _this.removeAllFiles()
                 }
@@ -19,11 +19,11 @@ $(document).ready(function () {
         }
     }
 
-    function show_image(){
-        
+    function show_image() {
+
         $.ajax({
-            url:'upload.php',
-            success: function(data){
+            url: 'upload.php',
+            success: function (data) {
                 alert('imagem enviada com sucesso')
             }
         })
@@ -145,6 +145,43 @@ addCapacitacao.click(function () {
 
 //PDF-PREVIEW
 
+// var primeiro_nome = document.querySelector('#primeiro-nome')
+// console.log(primeiro_nome)
+
+// var email = document.querySelector('#email')
+// console.log(email)
+
+// var linkedin = document.querySelector('#linkedin')
+// console.log(linkedin)
+
+// var cidade = document.querySelector('#cidade')
+// console.log(cidade)
+
+// var segundo_nome = document.querySelector('#segundo-nome')
+// console.log(segundo_nome)
+
+// var celular = document.querySelector('#celular')
+// console.log(celular)
+
+// var telefone = document.querySelector('#telefone')
+// console.log(telefone)
+
+// var data_nascimento = document.querySelector('#data-nascimento')
+// console.log(data_nascimento)
+
+// var data_nascimento = document.querySelector('#data-nascimento')
+// console.log(data_nascimento)
+
+// var objetivo = document.querySelector('#objetivo')
+// console.log(objetivo)
+
+$('#submit').click(function () {
+    $('#form :input').each(function () {
+        console.log(this)
+        let a = this.value;
+        
+    })
+})
 
 
 
