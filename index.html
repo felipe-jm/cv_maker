@@ -39,6 +39,10 @@
     <script src="https://kendo.cdn.telerik.com/2017.2.621/js/jquery.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2017.2.621/js/jszip.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2017.2.621/js/kendo.all.min.js"></script>
+    <link rel="stylesheet" type="text/css"
+        href="https://kendo.cdn.telerik.com/2017.2.621/styles/kendo.common-material.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://kendo.cdn.telerik.com/2017.2.621/styles/kendo.material.min.css">
 
 </head>
 
@@ -253,16 +257,51 @@
     <div id="pdf-preview">
         <div class="container">
             <div class="row py-3">
-                <div class="col-md-6 text-right">
-                    <img src="upload/ea.png" class="img-fluid">
+                <div class="col-md-4">
+                    <img src="upload/ea.png" class="img-fluid align-middle">
                 </div>
-                <div class="col-md-6">
-                    <h1>Nome e Sobrenome</h1>
+                <div class="col-md-8">
+                    <h1>Nome</h1>
+                    <h1>Sobrenome</h1>
                     <h4>Objetivo</h4>
                     <p class="lead">Magna duis voluptate cupidatat est sit est occaecat laborum mollit laborum. Ut
                         aliqua eiusmod adipisicing pariatur proident. Labore duis sunt sit ullamco. Anim sint nulla eu
                         cupidatat occaecat eiusmod eiusmod adipisicing duis ea. Proident deserunt enim id esse elit
                         consequat enim voluptate cupidatat aliqua sint commodo veniam adipisicing.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Objetivo</h4>
+                    <p class="lead">Magna duis voluptate cupidatat est sit est occaecat laborum mollit laborum. Ut
+                        aliqua eiusmod adipisicing pariatur proident. Labore duis sunt sit ullamco. Anim sint nulla eu
+                        cupidatat occaecat eiusmod eiusmod adipisicing duis ea. Proident deserunt enim id esse elit
+                        consequat enim voluptate cupidatat aliqua sint commodo veniam adipisicing</p>
+                    <h4>Observações</h4>
+                    <p class="lead">Magna duis voluptate cupidatat est sit est occaecat laborum mollit laborum. Ut
+                        aliqua eiusmod adipisicing pariatur proident. Labore duis sunt sit ullamco. Anim sint nulla eu
+                        cupidatat occaecat eiusmod eiusmod adipisicing duis ea. Proident deserunt enim id esse elit
+                        consequat enim voluptate cupidatat aliqua sint commodo veniam adipisicing</p>
+                </div>
+                <div class="col-md-6">
+                    <h4>Experiência</h4>
+                    <ul>
+                        <li>cargo 1</li>
+                        <li>cargo 1</li>
+                        <li>cargo 1</li>
+                    </ul>
+                    <h4>Idiomas</h4>
+                    <ul>
+                        <li>idioma 1</li>
+                        <li>idioma 1</li>
+                        <li>idioma 1</li>
+                    </ul>
+                    <h4>Capacitações</h4>
+                    <ul>
+                        <li>capa 1</li>
+                        <li>capa 2</li>
+                        <li>capa 3</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -288,6 +327,9 @@
                 .drawDOM("#pdf-preview",
                     {
                         paperSize: "A4",
+                        margin: { top: "0cm", bottom: "0cm", left: "0cm", right: "0cm" },
+                        scale: 0.7,
+                        landscape: true
                     })
                 .then(function (group) {
                     kendo.drawing.pdf.saveAs(group, "curriculo.pdf")
