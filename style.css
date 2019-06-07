@@ -1,21 +1,21 @@
-body, html{
+body,
+html {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
 }
 
-#form{
+#form {
     margin: 20px 50px 20px 50px;
     box-shadow: 1px 5px 10px grey;
 }
 
-#pdf-preview{
+#pdf-preview {
     margin: 20px 50px 20px 50px;
     box-shadow: 1px 5px 10px grey;
-    background: #ddd;
 }
 
-#dropzoneImg{
+#dropzoneImg {
     border: 2px dashed #0087F7;
     border-radius: 5px;
     margin: 0 auto;
@@ -23,11 +23,12 @@ body, html{
     background: white;
 }
 
-.red-bar{
+.red-bar {
     width: 100%;
     height: 50px;
     background: #C2331A;
 }
+
 
 /* .topic{
     margin: 10px auto;
@@ -35,4 +36,3 @@ body, html{
     height: 45px;
     background: #ddd;
 } */
-
