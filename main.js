@@ -1,5 +1,4 @@
 //FORM
-
 $(document).ready(function () {
     Dropzone.options.dropzoneImg = {
         autoProcessQueue: false,
@@ -180,22 +179,8 @@ $('#submit').click(function () {
         console.log(this)
         let a = this.value
     })
-    print(4)
 })
 
-function print(quality = 4) {
-    const filename = 'cv.pdf';
-
-    html2canvas(document.querySelector('#pdf-preview'),
-        { scale: quality }
-    ).then(canvas => {
-        let pdf = new jsPDF('p', 'mm', 'a4');
-        var width = pdf.internal.pageSize.getWidth();
-        var height = pdf.internal.pageSize.getHeight();
-        pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, width, height);
-        pdf.save(filename);
-    });
-}
 
 
 

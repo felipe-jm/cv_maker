@@ -28,25 +28,12 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
-    <!--jspdf and html2canvas-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.js"></script>
-
     <!--Dropzone JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
 
     <!--Tippy JS-->
     <script src="https://unpkg.com/popper.js@1"></script>
     <script src="https://unpkg.com/tippy.js@4"></script>
-
-    <!--Kendo UI -->
-    <!-- <script src="https://kendo.cdn.telerik.com/2017.2.621/js/jquery.min.js"></script>
-    <script src="https://kendo.cdn.telerik.com/2017.2.621/js/jszip.min.js"></script>
-    <script src="https://kendo.cdn.telerik.com/2017.2.621/js/kendo.all.min.js"></script>
-    <link rel="stylesheet" type="text/css"
-        href="https://kendo.cdn.telerik.com/2017.2.621/styles/kendo.common-material.min.css">
-    <link rel="stylesheet" type="text/css"
-        href="https://kendo.cdn.telerik.com/2017.2.621/styles/kendo.material.min.css"> -->
 
 </head>
 
@@ -98,22 +85,8 @@
                                 <input type="text" class="form-control my-2"
                                     placeholder="Empresa – Data Início – Data Final – Contato na empresa (Nome e telefone)">
                             </div>
-                            <!-- <div class="col-md-6">
-                                <label>Telefone da empresa</label>
-                                <input type="text" class="form-control" placeholder="(65) 9999-9999">
-                            </div> -->
+
                         </div>
-                        <!-- <div class="row my-2">
-                            <div class="col-md-6">
-                                <label>Data início</label>
-                                <input type="date" class="form-control" />
-                            </div>
-                            <div class="col-md-6">
-                                <label>Data final</label>
-                                <input type="date" class="form-control" />
-                            </div>
-                        </div>
-                    </div> -->
                         <div class="text-center my-3">
                             <button id="adicionar_cargo" type="button" class="btn btn-info">Adicionar cargo</button>
                         </div>
@@ -155,108 +128,8 @@
         </div>
     </div>
 
-    <!--PDF Preview-->
-    <!-- <div id="pdf-preview">
-        <div class="container-fluid py-3 px-5">
-            <div class="row text-center">
-                <div class="col-md-12">
-                    <img id="foto" src="upload/ea.png" align="right" class="img-fluid img-thumbnail rounded">
-                    <h4 id="pdf-nome">Nome e Sobrenome</h4>
-                    <h4 id="pdf-linkedin" class="lead">Linkedin</h4>
-                    <h4>Contato</h4>
-                    <h4 id="pdf-telefone" class="lead">Telefone: </h4>
-                    <h4 id="pdf-email" class="lead">E-mail: </h4>
-                    <h4 id="pdf-data-nascimento" class="lead">Data de nascimento: </h4>
-                    <h4 id="pdf-estado-civil" class="lead">Estado Civil: </h4>
-                </div>
-            </div>
-
-            <div class="topic text-center my-3">
-                <h2>Objetivo</h2>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12 text-left">
-                    <p id="pdf-objetivo" class="lead">Seu objetivo aqui. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                        mollit anim id est laborum.</p>
-                </div>
-            </div>
-
-            <div class="topic text-center">
-                <h2>Resumo</h2>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12 text-left">
-                    <p id="pdf-resumo" class="lead">Seu objetivo aqui. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                        mollit anim id est laborum.</p>
-                </div>
-            </div>
-
-            <div class="topic text-center">
-                <h2>Experiência</h2>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12 text-left">
-                    <ul id="pdf-cargos-list">
-                        <li class="lead">Cargo 1</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="topic text-center">
-                <h2>Idiomas</h2>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12 text-left">
-                    <ul id="pdf-idiomas-list">
-                        <li class="lead">Idioma 1</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="topic text-center">
-                <h2>Capacitações</h2>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12 text-left">
-                    <ul id="pdf-capacitacoes-list">
-                        <li class="lead">Capacitações 1</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="topic text-center">
-                <h2>Observações</h2>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12 text-left">
-                    <p id="pdf-resumo" class="lead">Seu objetivo aqui. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                        mollit anim id est laborum.</p>
-                </div>
-            </div>
-
-        </div>
-    </div> -->
 
     <!--PDF Preview-->
-
 
     <div id="pdf-preview">
         <div class="container">
@@ -308,7 +181,7 @@
                     </ul>
                 </div>
             </div>
-            
+
         </div>
     </div>
 
@@ -321,27 +194,6 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script src="main.js"></script>
-
-    <script>
-
-        //EXPORTING TO PDF WITH KENDO UI API 
-        // $('#submit').click(ExportPdf)
-
-        // function ExportPdf() {
-        //     kendo.drawing
-        //         .drawDOM("#pdf-preview",
-        //             {
-        //                 paperSize: "A4",
-        //                 margin: { top: "0cm", bottom: "0cm", left: "0cm", right: "0cm" },
-        //                 scale: 0.7,
-        //                 landscape: true
-        //             })
-        //         .then(function (group) {
-        //             kendo.drawing.pdf.saveAs(group, "curriculo.pdf")
-        //         });
-        // }
-
-    </script>
 
 </body>
 
