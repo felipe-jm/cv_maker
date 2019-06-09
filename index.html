@@ -7,8 +7,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!--Personal CSS-->
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <!--Form CSS-->
+    <link rel="stylesheet" type="text/css" href="css/form.css">
 
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
@@ -47,29 +47,29 @@
                     Coloque sua foto aqui.
                 </div>
             </form>
-            <form>
+            <form action="curriculum.php" method="POST">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="my-2">Primeiro nome</label>
-                            <input id="primeiro-nome" class="form-control" type="text" placeholder="Primeiro nome">
+                            <input name="primeiro-nome" id="primeiro-nome" class="form-control" type="text" placeholder="Primeiro nome">
                             <label class="my-2">E-mail</label>
-                            <input id="email" class="form-control" type="text" placeholder="email@email.com">
+                            <input name="email" id="email" class="form-control" type="text" placeholder="email@email.com">
                             <label class="my-2">Linkedin</label>
-                            <input id="linkedin" class="form-control" type="text" placeholder="email@linkedin.com">
+                            <input name="linkedin" id="linkedin" class="form-control" type="text" placeholder="email@linkedin.com">
                             <label class="my-2">Cidade</label>
-                            <input id="cidade" class="form-control" type="text" placeholder="Cuiabá">
+                            <input name="email" id="cidade" class="form-control" type="text" placeholder="Cuiabá">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label class="my-2">Segundo nome</label>
-                        <input id="segundo-nome" class="form-control" type="text" placeholder="Segundo nome">
+                        <input name="sobrenome" id="segundo-nome" class="form-control" type="text" placeholder="Segundo nome">
                         <label class="my-2">Celular</label>
-                        <input id="celular" class="form-control" type="text" placeholder="(65) 99999-9999">
+                        <input name="celular" id="celular" class="form-control" type="text" placeholder="(65) 99999-9999">
                         <label class="my-2">Telefone</label>
-                        <input id="telefone" class="form-control" type="text" placeholder="(65) 2222-2222">
+                        <input name="telefone" id="telefone" class="form-control" type="text" placeholder="(65) 2222-2222">
                         <label class="my-2">Data de nascimento</label>
-                        <input id="data-nascimento" type="date" class="form-control" />
+                        <input name="data_nascimento" id="data-nascimento" type="date" class="form-control" />
                     </div>
                 </div>
                 <div class="mt-3">
@@ -122,66 +122,9 @@
                     <textarea id="observacao" class="form-control" rows="3"></textarea>
                 </div>
                 <div class="text-center">
-                    <button id="submit" class="btn btn-success btn-lg my-5" type="button">Gerar currículo</button>
+                    <button id="submit" class="btn btn-success btn-lg my-5" type="submit">Gerar currículo</button>
                 </div>
             </form>
-        </div>
-    </div>
-
-
-    <!--PDF Preview-->
-
-    <div id="pdf-preview">
-        <div class="container">
-            <div class="row py-3">
-                <div class="col-md-4">
-                    <img src="upload/ea.png" class="img-fluid align-middle">
-                </div>
-                <div class="col-md-8">
-                    <h1>Nome</h1>
-                    <h1>Sobrenome</h1>
-                    <h4>Objetivo</h4>
-                    <p class="lead">Magna duis voluptate cupidatat est sit est occaecat laborum mollit laborum. Ut
-                        aliqua eiusmod adipisicing pariatur proident. Labore duis sunt sit ullamco. Anim sint nulla eu
-                        cupidatat occaecat eiusmod eiusmod adipisicing duis ea. Proident deserunt enim id esse elit
-                        consequat enim voluptate cupidatat aliqua sint commodo veniam adipisicing.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <h4>Objetivo</h4>
-                    <p class="lead">Magna duis voluptate cupidatat est sit est occaecat laborum mollit laborum. Ut
-                        aliqua eiusmod adipisicing pariatur proident. Labore duis sunt sit ullamco. Anim sint nulla eu
-                        cupidatat occaecat eiusmod eiusmod adipisicing duis ea. Proident deserunt enim id esse elit
-                        consequat enim voluptate cupidatat aliqua sint commodo veniam adipisicing</p>
-                    <h4>Observações</h4>
-                    <p class="lead">Magna duis voluptate cupidatat est sit est occaecat laborum mollit laborum. Ut
-                        aliqua eiusmod adipisicing pariatur proident. Labore duis sunt sit ullamco. Anim sint nulla eu
-                        cupidatat occaecat eiusmod eiusmod adipisicing duis ea. Proident deserunt enim id esse elit
-                        consequat enim voluptate cupidatat aliqua sint commodo veniam adipisicing</p>
-                </div>
-                <div class="col-md-6">
-                    <h4>Experiência</h4>
-                    <ul>
-                        <li>cargo 1</li>
-                        <li>cargo 1</li>
-                        <li>cargo 1</li>
-                    </ul>
-                    <h4>Idiomas</h4>
-                    <ul>
-                        <li>idioma 1</li>
-                        <li>idioma 1</li>
-                        <li>idioma 1</li>
-                    </ul>
-                    <h4>Capacitações</h4>
-                    <ul>
-                        <li>capa 1</li>
-                        <li>capa 2</li>
-                        <li>capa 3</li>
-                    </ul>
-                </div>
-            </div>
-
         </div>
     </div>
 
@@ -193,7 +136,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 

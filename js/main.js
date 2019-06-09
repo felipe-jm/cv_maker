@@ -156,6 +156,13 @@ addCapacitacao.click(function () {
 // var cidade = document.querySelector('#cidade')
 // console.log(cidade)
 
+$('#submit').click(function () {
+    $('#form :input').each(function () {
+        console.log(this)
+        let a = this.value
+    })
+})
+
 // var segundo_nome = document.querySelector('#segundo-nome')
 // console.log(segundo_nome)
 
@@ -174,12 +181,12 @@ addCapacitacao.click(function () {
 // var objetivo = document.querySelector('#objetivo')
 // console.log(objetivo)
 
-$('#submit').click(function () {
-    $('#form :input').each(function () {
-        console.log(this)
-        let a = this.value
-    })
-})
+// $('#submit').click(function () {
+//     $('#form :input').each(function () {
+//         console.log(this)
+//         let a = this.value
+//     })
+// })
 
 
 
