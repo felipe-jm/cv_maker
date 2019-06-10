@@ -814,8 +814,7 @@
                     },
                     {
                         "id": "workbench.action.terminal.split",
-                        "label": "&&Split Terminal",
-                        "enabled": false
+                        "label": "&&Split Terminal"
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -1366,5 +1365,19 @@
     },
     "theme": "vs-dark",
     "themeBackground": "#1e1e1e",
-    "pickerWorkingDir": "/opt/lampp/htdocs"
+    "pickerWorkingDir": "/opt/lampp/htdocs",
+    "windowsState": {
+        "lastActiveWindow": {
+            "folder": "file:///opt/lampp/htdocs/gerador_curriculo",
+            "backupPath": "/opt/lampp/htdocs/gerador_curriculo/~/.vscode-root/Backups/1115f4113e7edbaef6dd12ea0a9709b7",
+            "uiState": {
+                "mode": 0,
+                "x": 0,
+                "y": 40,
+                "width": 1366,
+                "height": 685
+            }
+        },
+        "openedWindows": []
+    }
 }

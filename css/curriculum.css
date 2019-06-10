@@ -1,12 +1,12 @@
 html, body{
     padding: 0;
     margin: 0;
-    background: #ddd;
+    font-family: "Times New Roman", Times, serif;
 }
 
 img{
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 300px;
 }
 
 h1, h2, h3, h4, h5, h6, p{

@@ -22,7 +22,7 @@ $doc->set_option('isHtml5ParserEnabled', true);
 
 $doc->loadHtml($html);
 //set page size and orientation
-$doc->setPaper('A4', 'landscape');
+$doc->setPaper('A4', 'portrait');
 
 //Render the HTML as PDF
 $doc->render();
