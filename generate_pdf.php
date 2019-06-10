@@ -17,6 +17,7 @@ $options->set('isRemoteEnabled', TRUE);
 
 //initialize dompdf class
 $doc = new Dompdf($options);
+$doc->set_base_path("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
 
 $doc->set_option('isHtml5ParserEnabled', true);
 
