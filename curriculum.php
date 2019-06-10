@@ -34,6 +34,8 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <!--Currículo CSS-->
   <link rel="stylesheet" type="text/css" href="css/curriculum.css">
 
@@ -57,13 +59,13 @@
 
     <div id="data" class="container-fuid text-left mx-3 my-3">
 
-      <h4>Resumo</h4>
-      <p><?php echo $_POST['resumo']; ?></p>
+      <h4>Objetivo</h4>
+      <p><?php echo $_POST['objetivo']; ?></p>
 
       <hr>
 
-      <h4>Objetivo</h4>
-      <p><?php echo $_POST['objetivo']; ?></p>
+      <h4>Resumo</h4>
+      <p><?php echo $_POST['resumo']; ?></p>
 
       <hr>
 
