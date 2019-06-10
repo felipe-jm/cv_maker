@@ -1,4 +1,30 @@
 html, body{
     padding: 0;
     margin: 0;
+    background: #ddd;
+}
+
+img{
+    width: 150px;
+    height: 150px;
+}
+
+h1, h2, h3, h4, h5, h6, p{
+    margin: 0;
+    padding: 0;
+}
+/* 
+#data{
+    border-radius: 30px;
+    background: #ddd;
+} */
+
+p{
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+ul li{
+    font-size: 0.9rem;
+    font-weight: 300;
 }

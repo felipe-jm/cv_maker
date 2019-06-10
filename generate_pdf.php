@@ -7,6 +7,11 @@ require_once 'vendor/autoload.php';
 use Dompdf\Dompdf;
 use Dompdf\Options;
 
+ob_start();
+require_once 'curriculum.php';
+$html = ob_get_clean();
+ob_end_clean();
+
 $options = new Options();
 $options->set('isRemoteEnabled', TRUE);
 
@@ -14,20 +19,18 @@ $options->set('isRemoteEnabled', TRUE);
 $doc = new Dompdf($options);
 
 $doc->set_option('isHtml5ParserEnabled', true);
-$page = file_get_contents("curriculum.html");
-$doc->loadHtml($page);
 
+$doc->loadHtml($html);
 //set page size and orientation
-$doc->setPaper('A4', 'portrait');
+$doc->setPaper('A4', 'landscape');
 
 //Render the HTML as PDF
-
 $doc->render();
 
 //get output of generated pdf in browser
-
 $doc->stream("CurriculoEA", array("Attachment"=>0));
 //1 = Download
 //0 = Preview
+
 ?>
 

@@ -2,6 +2,7 @@
 $(document).ready(function () {
     Dropzone.options.dropzoneImg = {
         autoProcessQueue: false,
+        maxFiles:1,
         acceptedFiles: ".png, .jpg, .gif, .bmp, .jpeg",
         init: function () {
             var submitBtn = document.getElementById('submit')
@@ -18,21 +19,15 @@ $(document).ready(function () {
         }
     }
 
-    function show_image() {
-
-        $.ajax({
-            url: 'upload.php',
-            success: function (data) {
-                alert('imagem enviada com sucesso')
-            }
-        })
-
-    }
-
 })
 
 tippy('#objetivo', {
     content: "O objetivo deve ser customizado para cada empresa e vaga. Ele deve transmitir ao avaliador que seu objetivo é o mesmo que o dele (aqui cabe você se colocar no outro lado da mesa e pensar o que seu empregador deseja de você). Caso esta informação não esteja adequada à descrição do perfil divulgado pela empresa de recrutamento, provavelmente seu currículo corre o risco de ser descartado.",
+    placement: 'top',
+})
+
+tippy('#resumo', {
+    content: "Porque você escolheu o curso que fez ou a vaga que está buscando? Qual sua característica que te coloca na frente do mercado?O que você pode agregar na empresa que está entrando? Aqui é o momento de pedir sua oportunidade e deixar claro que você vai dar o seu melhor para atender asexpectativas da empresa; Caso seja uma vaga que necessite mudar de cidade, é importante colocar que você tem essadisponibilidade;Obs. Muitas vezes a primeira versão não sai top, então faça, depois você faz as devidas correções e melhorias.",
     placement: 'top',
 })
 
@@ -56,91 +51,91 @@ tippy('#capacitacao', {
     placement: 'top',
 })
 
-tippy('#observacoes', {
+tippy('#observacao', {
     content: "Colocar informações relevantes à sua contratação e situação atual. Exemplo: disponibilidade para viagem, para mudar para outras regiões, carteira de motorista, experiências diversas importantes para a vaga em questão que a pessoa responsável gostaria de saber.",
     placement: 'top',
 })
 
-var addCargo = $('#adicionar_cargo')
+// var addCargo = $('#adicionar_cargo')
 
-addCargo.click(function () {
+// addCargo.click(function () {
 
-    var cargos_row = document.getElementById('cargos_row')
-    var num_inputs_in_cargos = cargos_row.querySelectorAll('input').length
+//     var cargos_row = document.getElementById('cargos_row')
+//     var num_inputs_in_cargos = cargos_row.querySelectorAll('input').length
 
-    if (num_inputs_in_cargos < 3) {
-        var novo_cargo = document.createElement('input')
-        var cargo_div = document.createElement('div')
-        cargo_div.className = 'col-md-8 my-2'
-        novo_cargo.className = 'form-control'
-        novo_cargo.placeholder = 'Empresa – Data Início – Data Final – Contato na empresa (Nome e telefone)'
-        novo_cargo.type = 'text'
-        cargos_row.appendChild(cargo_div)
-        cargo_div.appendChild(novo_cargo)
-    } else {
-        var limit_div = document.createElement('div')
-        limit_div.className = 'alert alert-danger'
-        limit_div.role = 'alert'
-        limit_div.innerHTML = 'Limite de cargos atingido!'
-        cargos_row.appendChild(limit_div)
-        addCargo.attr('disabled', 'disabled')
-    }
+//     if (num_inputs_in_cargos < 3) {
+//         var novo_cargo = document.createElement('input')
+//         var cargo_div = document.createElement('div')
+//         cargo_div.className = 'col-md-8 my-2'
+//         novo_cargo.className = 'form-control'
+//         novo_cargo.placeholder = 'Empresa – Data Início – Data Final – Contato na empresa (Nome e telefone)'
+//         novo_cargo.type = 'text'
+//         cargos_row.appendChild(cargo_div)
+//         cargo_div.appendChild(novo_cargo)
+//     } else {
+//         var limit_div = document.createElement('div')
+//         limit_div.className = 'alert alert-danger'
+//         limit_div.role = 'alert'
+//         limit_div.innerHTML = 'Limite de cargos atingido!'
+//         cargos_row.appendChild(limit_div)
+//         addCargo.attr('disabled', 'disabled')
+//     }
 
-})
+// })
 
-var addIdioma = $('#adicionar_idioma')
+// var addIdioma = $('#adicionar_idioma')
 
-addIdioma.click(function () {
+// addIdioma.click(function () {
 
-    var idiomas_row = document.getElementById('idiomas_row')
-    var num_inputs_idiomas = idiomas_row.querySelectorAll('input').length
+//     var idiomas_row = document.getElementById('idiomas_row')
+//     var num_inputs_idiomas = idiomas_row.querySelectorAll('input').length
 
-    if (num_inputs_idiomas < 6) {
-        var novo_idioma = document.createElement('input')
-        var idioma_div = document.createElement('div')
-        idioma_div.className = 'col-md-8 my-2'
-        novo_idioma.className = 'form-control'
-        novo_idioma.placeholder = 'Curso – Instituição – Data – Nível ou Idioma e Nível'
-        novo_idioma.type = 'text'
-        idiomas_row.appendChild(idioma_div)
-        idioma_div.appendChild(novo_idioma)
-    } else {
-        var limit_div = document.createElement('div')
-        limit_div.className = 'alert alert-danger'
-        limit_div.role = 'alert'
-        limit_div.innerHTML = 'Limite de idiomas atingido!'
-        idiomas_row.appendChild(limit_div)
-        addIdioma.attr('disabled', 'disabled')
-    }
+//     if (num_inputs_idiomas < 3) {
+//         var novo_idioma = document.createElement('input')
+//         var idioma_div = document.createElement('div')
+//         idioma_div.className = 'col-md-8 my-2'
+//         novo_idioma.className = 'form-control'
+//         novo_idioma.placeholder = 'Curso – Instituição – Data – Nível ou Idioma e Nível'
+//         novo_idioma.type = 'text'
+//         idiomas_row.appendChild(idioma_div)
+//         idioma_div.appendChild(novo_idioma)
+//     } else {
+//         var limit_div = document.createElement('div')
+//         limit_div.className = 'alert alert-danger'
+//         limit_div.role = 'alert'
+//         limit_div.innerHTML = 'Limite de idiomas atingido!'
+//         idiomas_row.appendChild(limit_div)
+//         addIdioma.attr('disabled', 'disabled')
+//     }
 
-})
+// })
 
-var addCapacitacao = $('#adicionar_capacitacao')
+// var addCapacitacao = $('#adicionar_capacitacao')
 
-addCapacitacao.click(function () {
+// addCapacitacao.click(function () {
 
-    var capacitacao_row = document.getElementById('capacitacao_row')
-    var num_inputs_capacitacao = capacitacao_row.querySelectorAll('input').length
+//     var capacitacao_row = document.getElementById('capacitacao_row')
+//     var num_inputs_capacitacao = capacitacao_row.querySelectorAll('input').length
 
-    if (num_inputs_capacitacao < 5) {
-        var nova_capacitacao = document.createElement('input')
-        var capacitacao_div = document.createElement('div')
-        capacitacao_div.className = 'col-md-8 my-2'
-        nova_capacitacao.className = 'form-control'
-        nova_capacitacao.placeholder = 'Curso – Instituição – Data de conclusão - Carga horária'
-        nova_capacitacao.type = 'text'
-        capacitacao_row.appendChild(capacitacao_div)
-        capacitacao_div.appendChild(nova_capacitacao)
-    } else {
-        var limit_div = document.createElement('div')
-        limit_div.className = 'alert alert-danger'
-        limit_div.role = 'alert'
-        limit_div.innerHTML = 'Limite de capacitações atingida!'
-        capacitacao_row.appendChild(limit_div)
-        addCapacitacao.attr('disabled', 'disabled')
-    }
+//     if (num_inputs_capacitacao < 3) {
+//         var nova_capacitacao = document.createElement('input')
+//         var capacitacao_div = document.createElement('div')
+//         capacitacao_div.className = 'col-md-8 my-2'
+//         nova_capacitacao.className = 'form-control'
+//         nova_capacitacao.placeholder = 'Curso – Instituição – Data de conclusão - Carga horária'
+//         nova_capacitacao.type = 'text'
+//         capacitacao_row.appendChild(capacitacao_div)
+//         capacitacao_div.appendChild(nova_capacitacao)
+//     } else {
+//         var limit_div = document.createElement('div')
+//         limit_div.className = 'alert alert-danger'
+//         limit_div.role = 'alert'
+//         limit_div.innerHTML = 'Limite de capacitações atingida!'
+//         capacitacao_row.appendChild(limit_div)
+//         addCapacitacao.attr('disabled', 'disabled')
+//     }
 
-})
+// })
 
 //PDF-PREVIEW
 
@@ -156,12 +151,12 @@ addCapacitacao.click(function () {
 // var cidade = document.querySelector('#cidade')
 // console.log(cidade)
 
-$('#submit').click(function () {
-    $('#form :input').each(function () {
-        console.log(this)
-        let a = this.value
-    })
-})
+// $('#submit').click(function () {
+//     $('#form :input').each(function () {
+//         console.log(this)
+//         let a = this.value
+//     })
+// })
 
 // var segundo_nome = document.querySelector('#segundo-nome')
 // console.log(segundo_nome)

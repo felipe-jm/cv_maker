@@ -7,12 +7,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!--Form CSS-->
-    <link rel="stylesheet" type="text/css" href="css/form.css">
-
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!--Form CSS-->
+    <link rel="stylesheet" type="text/css" href="css/form.css">
 
     <!--Dropzone CSS-->
     <link rel="stylesheet" type="text/css"
@@ -42,7 +42,7 @@
     <div id="form">
         <div class="container py-5">
             <h2 class="text-center">Preencha o formulário com atenção!</h2>
-            <form action="upload.php" class="dropzone needsclick my-5" id="dropzoneImg">
+            <form action="curriculum.php" class="dropzone needsclick my-5" id="dropzoneImg">
                 <div class="dz-message needsclick">
                     Coloque sua foto aqui.
                 </div>
@@ -52,29 +52,39 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="my-2">Primeiro nome</label>
-                            <input name="primeiro-nome" id="primeiro-nome" class="form-control" type="text" placeholder="Primeiro nome">
+                            <input name="primeiro-nome" id="primeiro-nome" class="form-control" type="text"
+                                placeholder="Primeiro nome">
                             <label class="my-2">E-mail</label>
-                            <input name="email" id="email" class="form-control" type="text" placeholder="email@email.com">
+                            <input name="email" id="email" class="form-control" type="text"
+                                placeholder="email@email.com">
                             <label class="my-2">Linkedin</label>
-                            <input name="linkedin" id="linkedin" class="form-control" type="text" placeholder="email@linkedin.com">
+                            <input name="linkedin" id="linkedin" class="form-control" type="text"
+                                placeholder="email@linkedin.com">
                             <label class="my-2">Cidade</label>
-                            <input name="email" id="cidade" class="form-control" type="text" placeholder="Cuiabá">
+                            <input name="cidade" id="cidade" class="form-control" type="text" placeholder="Cuiabá">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label class="my-2">Segundo nome</label>
-                        <input name="sobrenome" id="segundo-nome" class="form-control" type="text" placeholder="Segundo nome">
+                        <input name="sobrenome" id="segundo-nome" class="form-control" type="text"
+                            placeholder="Segundo nome">
                         <label class="my-2">Celular</label>
-                        <input name="celular" id="celular" class="form-control" type="text" placeholder="(65) 99999-9999">
+                        <input name="celular" id="celular" class="form-control" type="text"
+                            placeholder="(65) 99999-9999">
                         <label class="my-2">Telefone</label>
-                        <input name="telefone" id="telefone" class="form-control" type="text" placeholder="(65) 2222-2222">
+                        <input name="telefone" id="telefone" class="form-control" type="text"
+                            placeholder="(65) 2222-2222">
                         <label class="my-2">Data de nascimento</label>
                         <input name="data_nascimento" id="data-nascimento" type="date" class="form-control" />
                     </div>
                 </div>
                 <div class="mt-3">
                     <h2>Objetivo</h2>
-                    <textarea id="objetivo" class="form-control" rows="3"></textarea>
+                    <textarea name="objetivo" id="objetivo" class="form-control" rows="3"></textarea>
+                </div>
+                <div class="mt-3">
+                    <h2>Resumo</h2>
+                    <textarea name="resumo" id="resumo" class="form-control" rows="3"></textarea>
                 </div>
                 <div class="mt-3">
                     <h2>Experiência</h2>
@@ -82,48 +92,59 @@
                     <div id="cargo">
                         <div id="cargos_row" class="row">
                             <div class="col-md-8">
-                                <input type="text" class="form-control my-2"
+                                <input type="text" class="form-control my-2" name="cargo1"
+                                    placeholder="Empresa – Data Início – Data Final – Contato na empresa (Nome e telefone)">
+                                <input type="text" class="form-control my-2" name="cargo2"
+                                    placeholder="Empresa – Data Início – Data Final – Contato na empresa (Nome e telefone)">
+                                <input type="text" class="form-control my-2" name="cargo3"
                                     placeholder="Empresa – Data Início – Data Final – Contato na empresa (Nome e telefone)">
                             </div>
-
-                        </div>
-                        <div class="text-center my-3">
+                            <!-- <div class="text-center my-3">
                             <button id="adicionar_cargo" type="button" class="btn btn-info">Adicionar cargo</button>
+                        </div> -->
                         </div>
                     </div>
-                </div>
-                <div class="mt-3">
-                    <h2 id="idiomas">Idiomas</h2>
-                    <div id="idiomas_row" class="row">
-                        <div class="col-md-8">
-                            <input type="text" class="form-control my-2"
-                                placeholder="Curso – Instituição – Data – Nível ou Idioma e Nível" />
+                    <div class="mt-3">
+                        <h2 id="idiomas">Idiomas</h2>
+                        <div id="idiomas_row" class="row">
+                            <div class="col-md-8">
+                                <input type="text" class="form-control my-2" name="idioma1"
+                                    placeholder="Curso – Instituição – Data – Nível ou Idioma e Nível" />
+                                <input type="text" class="form-control my-2" name="idioma2"
+                                    placeholder="Curso – Instituição – Data – Nível ou Idioma e Nível" />
+                                <input type="text" class="form-control my-2" name="idioma3"
+                                    placeholder="Curso – Instituição – Data – Nível ou Idioma e Nível" />
+                            </div>
                         </div>
-                    </div>
-                    <div class="text-center my-3">
+                        <!-- <div class="text-center my-3">
                         <button id="adicionar_idioma" type="button" class="btn btn-info">Adicionar idioma</button>
+                    </div> -->
                     </div>
-                </div>
-                <div class="mt-3">
-                    <h2 id="capacitacao">Capacitações</h2>
-                    <div id="capacitacao_row" class="row">
-                        <div class="col-md-8">
-                            <input type="text" class="form-control my-2"
-                                placeholder="Curso – Instituição – Data de conclusão - Carga horaria" />
+                    <div class="mt-3">
+                        <h2 id="capacitacao">Capacitações</h2>
+                        <div id="capacitacao_row" class="row">
+                            <div class="col-md-8">
+                                <input type="text" class="form-control my-2" name="capacitacao1"
+                                    placeholder="Curso – Instituição – Data de conclusão - Carga horaria" />
+                                <input type="text" class="form-control my-2" name="capacitacao2"
+                                    placeholder="Curso – Instituição – Data de conclusão - Carga horaria" />
+                                <input type="text" class="form-control my-2" name="capacitacao3"
+                                    placeholder="Curso – Instituição – Data de conclusão - Carga horaria" />
+                                <!-- <div class="text-center my-3">
+                                    <button id="adicionar_capacitacao" type="button" class="btn btn-info">Adicionar
+                                        capacitação</button>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <h2>Observações</h2>
+                            <textarea name="observacao" id="observacao" class="form-control" rows="3"></textarea>
                         </div>
                     </div>
-                    <div class="text-center my-3">
-                        <button id="adicionar_capacitacao" type="button" class="btn btn-info">Adicionar
-                            capacitação</button>
+                    <div class="text-center">
+                        <button id="submit" class="btn btn-success btn-lg my-5" type="submit">Gerar
+                            currículo</button>
                     </div>
-                </div>
-                <div class="mt-3">
-                    <h2 id="observacoes">Observações</h2>
-                    <textarea id="observacao" class="form-control" rows="3"></textarea>
-                </div>
-                <div class="text-center">
-                    <button id="submit" class="btn btn-success btn-lg my-5" type="submit">Gerar currículo</button>
-                </div>
             </form>
         </div>
     </div>
