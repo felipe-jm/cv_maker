@@ -37,29 +37,26 @@
   <!--Currículo CSS-->
   <link rel="stylesheet" type="text/css" href="css/curriculum.css">
 
-  <!--Font Awesome-->
-  <link rel="stylesheet" type="text/css" href="fontawesome/all.min.css">
-
 </head>
 
 <body>
 
-  <div class="container-fuid text-left mx-3 my-3 text-center text-justify">
+  <div class="container-fuid text-left text-center text-justify">
     <!-- <img class="img-fluid img-thumbnail float-right" src="<?php echo $new ?>"> -->
     <h1 class="float-left"><?php echo $_POST['primeiro-nome'] ?></h1><br>
     <h1 class="float-left"><?php echo ' ' . $_POST['sobrenome']; ?></h1>
-    <div class="text-right" id="contato">
+    <div class="text-right">
       <h4>Contato</h4>
       <p><?php echo $_POST['telefone']; ?></p>
+      <p><?php echo $_POST['celular']; ?></p>
       <p><?php echo $_POST['email']; ?></p>
       <p><?php echo $_POST['data_nascimento']; ?></p>
       <p><?php echo $_POST['cidade']; ?></p>
       <p><?php echo $_POST['linkedin']; ?></p>
-
     </div>
 
     <!--Bootstrap grid teste -->
-    <!-- <div class="container">
+    <!-- <div class="container-fluid">
       <div class="row">
         <div class="col-sm-10 bg-success">
           <br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br>
@@ -70,7 +67,7 @@
       </div>
     </div> -->
 
-    <div id="data" class="container-fuid text-left mx-3 my-3">
+    <div id="data" class="container-fuid text-left">
 
       <h4>Objetivo</h4>
       <p><?php echo $_POST['objetivo']; ?></p>
